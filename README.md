@@ -6,7 +6,7 @@ Then copy the configuration and install related packages :
 rm -rf ~/.doom.d && git clone https://github.com/intoxx/doom-config ~/.doom.d && ~/.emacs.d/bin/doom sync
 ```
 
-# Update
+# Upgrade
 ```bash
-~/.emacs.d/bin doom upgrade && git pull ~/.doom.d origin
+git pull ~/.doom.d origin && ~/.emacs.d/bin doom upgrade
 ```
