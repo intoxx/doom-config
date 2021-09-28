@@ -8,5 +8,5 @@ rm -rf ~/.doom.d && git clone https://github.com/intoxx/doom-config ~/.doom.d &&
 
 # Upgrade
 ```bash
-git pull ~/.doom.d origin && ~/.emacs.d/bin doom upgrade
+git -C ~/.doom.d pull origin && ~/.emacs.d/bin/doom upgrade
 ```
