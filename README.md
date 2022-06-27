@@ -1,6 +1,6 @@
 # Dependencies
-[Doom emacs](https://github.com/hlissner/doom-emacs#install).
-ripgrep (for a better project wide search, [see thread](https://www.reddit.com/r/DoomEmacs/comments/lsqnbg/comment/gosrxdd/?utm_source=share&utm_medium=web2x&context=3)).
+- [Doom emacs](https://github.com/hlissner/doom-emacs#install).
+- ripgrep (for a better project wide search, [see thread](https://www.reddit.com/r/DoomEmacs/comments/lsqnbg/comment/gosrxdd/?utm_source=share&utm_medium=web2x&context=3)).
 
 Install the configuration :
 ```bash
