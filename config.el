@@ -54,12 +54,17 @@
 ;; they are implemented.
 
 (after! projectile
-  (setq projectile-project-search-path '("~/projects")))
+  (setq projectile-project-search-path '("~/Projects")))
 
-;; Indentation and padding
-(setq-hook! web-mode
-  web-mode-markup-indent-offset 4
-  web-mode-css-indent-offset 4
-  web-mode-code-indent-offset 4 ;; other scripting / programming languages
-  web-mode-script-padding 4 ;; left padding inside a <script>
-  web-mode-style-padding 4) ;; left padding inside a <style>
+(use-package! web-mode
+  :mode
+  (("\\.ts\\'" . web-mode)
+   ("\\.jsx\\'" . web-mode))
+
+  :config
+  ;; Indentation and padding
+  (setq web-mode-markup-indent-offset 4
+        web-mode-css-indent-offset 4
+        web-mode-code-indent-offset 4 ; other scripting / programming languages
+        web-mode-script-padding 4 ; left padding inside a <script>
+        web-mode-style-padding 4)) ; left padding inside a <style>
