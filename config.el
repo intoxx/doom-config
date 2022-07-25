@@ -58,8 +58,9 @@
 
 (use-package! web-mode
   :mode
-  (("\\.ts\\'" . web-mode)
-   ("\\.jsx\\'" . web-mode))
+  (("\\.jsx\\'" . web-mode)
+   ("\\.ts\\'" . web-mode)
+   ("\\.tsx\\'" . web-mode))
 
   :config
   ;; Indentation and padding
