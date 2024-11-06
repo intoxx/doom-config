@@ -91,3 +91,31 @@
         web-mode-code-indent-offset 4 ; other scripting / programming languages
         web-mode-script-padding 4 ; left padding inside a <script>
         web-mode-style-padding 4)) ; left padding inside a <style>
+
+;;;;
+;;;; KEYBINDINGS
+;;;;
+
+;;; Parentheses management
+(after! (smartparens evil)
+  (map! :map smartparens-mode-map
+        "C-)" #'sp-forward-slurp-sexp
+        "C-0" #'sp-forward-barf-sexp
+        "C-(" #'sp-backward-slurp-sexp
+        "C-9" #'sp-backward-barf-sexp
+        "M-(" #'sp-wrap-round
+        "M-S" #'sp-split-sexp
+        "<backtab>" #'sp-backward-up-sexp)
+
+  (map! :map (evil-motion-state-map
+              evil-insert-state-map
+              comint-mode-map)
+        "C-d" #'sp-splice-sexp-killing-around)
+
+  (map! "M-9" #'sp-splice-sexp
+        "M-s" #'sp-splice-sexp
+        "M-r" #'sp-raise-sexp ; seems to be similar to <C-d> SP-SPLICE-SEXP-KILLING-AROUND
+        "M-h" #'sp-backward-kill-sexp
+        "M-l" #'sp-kill-sexp
+        "M-H" #'sp-backward-kill-word
+        "M-L" #'sp-kill-word))
