@@ -119,3 +119,31 @@
         "M-l" #'sp-kill-sexp
         "M-H" #'sp-backward-kill-word
         "M-L" #'sp-kill-word))
+
+;;; Comments based on Lisp standards
+;;; FIXME: Insert ";;;;" instead of ";;;" when selecting multiple top-level lines.
+(defun lisp-comment-dwim ()
+  "Comment or uncomment using standard Lisp conventions by expanding COMMENT-DWIM."
+  (interactive)
+  (let* ((depth
+          (nth 0 (syntax-ppss)))
+         (empty-line?
+          (= (line-beginning-position) (line-end-position)))
+         (next-line-empty?
+          (save-excursion
+            (forward-line)
+            (= (line-beginning-position) (line-end-position))))
+         (top-level?
+          (= depth 0)))
+    (save-excursion
+      (cond
+       ((and top-level? next-line-empty?)
+        (comment-dwim 4))
+       (top-level?
+        (comment-dwim 3))
+       (t
+        (comment-dwim nil))))))
+
+(after! (evil)
+  (map! :map lisp-mode-map
+        "M-;" #'lisp-comment-dwim))
