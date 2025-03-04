@@ -144,6 +144,6 @@
        (t
         (comment-dwim nil))))))
 
-(after! (evil)
+(after! (lisp-mode)
   (map! :map lisp-mode-map
         "M-;" #'lisp-comment-dwim))
