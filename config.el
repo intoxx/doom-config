@@ -135,14 +135,15 @@
             (= (line-beginning-position) (line-end-position))))
          (top-level?
           (= depth 0)))
-    (save-excursion
-      (cond
-       ((and top-level? empty-line? next-line-empty?)
-        (comment-dwim 4))
-       ((and top-level? empty-line?)
-        (comment-dwim 3))
-       (t
-        (comment-dwim nil))))))
+    (cond
+     ((and top-level? empty-line? next-line-empty?)
+      (comment-dwim 4)
+      (end-of-line))
+     ((and top-level? empty-line?)
+      (comment-dwim 3)
+      (end-of-line))
+     (t
+      (comment-dwim nil)))))
 
 (after! (lisp-mode)
   (map! :map lisp-mode-map
