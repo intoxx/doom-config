@@ -137,9 +137,9 @@
           (= depth 0)))
     (save-excursion
       (cond
-       ((and top-level? next-line-empty?)
+       ((and top-level? empty-line? next-line-empty?)
         (comment-dwim 4))
-       (top-level?
+       ((and top-level? empty-line?)
         (comment-dwim 3))
        (t
         (comment-dwim nil))))))
