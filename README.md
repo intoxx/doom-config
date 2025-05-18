@@ -5,7 +5,7 @@
 
 # Install
 ```bash
-git clone https://github.com/intoxx/doom-config ~/.config/doom && ~/.config/emacs/bin/doom sync
+rm -rf ~/.config/doom && git clone https://github.com/intoxx/doom-config ~/.config/doom && ~/.config/emacs/bin/doom sync
 ```
 
 # Upgrade
