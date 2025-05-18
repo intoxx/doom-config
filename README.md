@@ -5,10 +5,10 @@
 
 # Install
 ```bash
-rm -rf ~/.doom.d && git clone https://github.com/intoxx/doom-config ~/.doom.d && ~/.emacs.d/bin/doom sync
+git clone https://github.com/intoxx/doom-config ~/.config/doom && ~/.config/emacs/bin/doom sync
 ```
 
 # Upgrade
 ```bash
-git -C ~/.doom.d pull origin && ~/.emacs.d/bin/doom upgrade
+git -C ~/.config/doom pull origin && ~/.config/emacs/bin/doom upgrade
 ```
